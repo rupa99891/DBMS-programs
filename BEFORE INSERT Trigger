@@ -1,0 +1,7 @@
+CREATE OR REPLACE TRIGGER capitalize_name
+BEFORE INSERT ON Students
+FOR EACH ROW
+BEGIN
+    :NEW.Name := UPPER(:NEW.Name);
+END;
+/
